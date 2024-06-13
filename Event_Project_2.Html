@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+  
+    <h1>Start should change the Background color every second With it Hex code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <h4></h4>
+    <script>
+      
+      // this mini project is about changing the background color of the body every second with its hex code using the setInterval method and the clearInterval method
+      const rendomColor = function(){
+        const Hex = '0123456789ABCDEF';
+        let color = '#';
+        for(let i = 0; i < 6; i++){
+          color += Hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      document.querySelector('#start').addEventListener('click', function(){
+        Color_Interval = setInterval(function(){
+          document.body.style.backgroundColor = rendomColor();
+          document.querySelector('h4').textContent = rendomColor();
+        }, 1000);
+
+      document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(Color_Interval);
+      });
+      })
+    </script>
+  </body>
+</html>

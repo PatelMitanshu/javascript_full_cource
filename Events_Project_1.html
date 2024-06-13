@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello javascript</h2>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    // setInterval is used for the exection of function on specific time interval 
+    // difference between setTimeout and setInterval is that setTimeout is used for the execution of function after a specific time and setInterval is used for the execution of function on specific time repeatedly
+    // in this function first parameter is function name and second parameter is time in milliseconds and third parameter is used to pass the argument in function thrd parameter is optional
+
+    // const sayDate = function(){
+  //      console.log("Mitashu",Date.now())
+  //  }
+
+//    setInterval(sayDate,1000,"Hello") 
+
+// exapmple of setInterval function with argument and clearInterval function with user input
+// user user click on start button then setInterval function is called and when user click on stop button then clearInterval function is called and stop the setInterval function
+
+const sayDate_1 = function(str){
+    console.log(str,Date.now())
+
+}
+
+document.querySelector('#start').addEventListener('click',function(){
+      const stop_sayDate =  setInterval(sayDate_1,1000,"Hello")
+      
+document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(stop_sayDate)
+    })
+})
+
+</script>
+</html>
