@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+    // in this code first we can select owl image and second we can all ul element means all images
+    // when we can write false after function then it is called bubbling in this execution of event is from child to parent means first owl image is clicked then ul(images) is clicked
+   
+    document.getElementById('owl').addEventListener('click',function(){
+        alert("Owl clicked again")
+    },false)
+    document.getElementById('images').addEventListener('click',function(){
+        alert("Owl clicked")
+    },false)
+    
+     // when we can write true after function then it is called capturing in this execution of event is from parent to child means first ul(images) is clicked then owl image is clicked
+
+    document.getElementById('owl').addEventListener('click',function(){
+        alert("Owl clicked again")
+    },true)
+    document.getElementById('images').addEventListener('click',function(){
+        alert("Owl clicked")
+    },true)
+
+    // when we can write in function e.stopPropagation() then it is called stopPropagation in this bubbling is stoped means when owl image is clicked then ul(images) is not clicked
+
+    document.getElementById('owl').addEventListener('click',function(){
+        alert("Owl clicked again")
+        e.stopPropagation()
+    },false)
+    // when we can write in function e.preventDefault() then it is called preventDefault in this default action is stoped means when google link is clicked then it is not redirect to google.com 
+    // use this function yoyu can change the default behaviour of the element
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("Google clicked") 
+    },false)
+    
+    // when we can write in function e.target then it is called target in this we can get the element which is clicked 
+    // example in this code we can get the id of image which is clicked in list of images when we can click on any image then we can get the html element of that image 
+    // and target.parentNode is used to get the parent of that element
+    // and remove() is used to remove the target element from the html
+
+    document.querySelector('#images').addEventListener('click',function(e){
+      let removeIt = e.target.parentNode
+      
+        removeIt.remove()
+    },false) 
+
+    
+    // learn below properties of event object
+    // type,timestamp,defalutPrevented
+    // target,toElement,srcElement,currentTarget,
+    // altKey,ctrlKey,shiftKey,keyCode
+    // clientX,clientY,screnX,screenY
+</script>
+</html>
