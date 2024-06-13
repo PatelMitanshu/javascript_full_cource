@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    onsole.log(parent)
+    // when can access the children of the parent  using children property
+    // we can access the children using index
+    // we can access the childern using simple for loop not for each loop
+    console.log(parent.children)
+    console.log(parent.children[0].innerhtml)
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerhtml)
+    }
+  // we can also use the firstElementChild and lastElementChild to access the first and last element of the parent
+    parent.children[1].style.color = 'red' 
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+  
+    // we can also use the nextElementSibling and previousElementSibling to access the next and previous element of the parent
+    // we can also use the parentElement to access the parent of the child element
+    const dayone = document.querySelector('.day')
+    console.log(dayone)
+    console.log(dayone.nextElementSibling)
+    console.log(dayone.previousElementSibling)
+    console.log(dayone.parentElement)
+
+     // we can also use the childNodes to access the children of the parent but it will return the nodelist  means conut the html element and text element and comment element and space 
+
+    console.log(parent.childNodes)
+    
+</script>
+</html>

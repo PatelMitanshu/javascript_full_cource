@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // in this code use inerHTML is not use as optimayzation way because it is travarse all the dom element and it is not good for performance
+    function addlanguage(language){
+        const li = document.createElement('li')
+        li.innerHTML =`${language}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage('Python')
+
+    // in this code use textContent is use as optimayzation way because it is not travarse all the dom element and it is good for performance
+    function  addoptiLanguage(language){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(language))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptiLanguage('Java')
+
+   // in this code use replacewith the second element with new element
+    const secondLanguage = document.querySelector('li:nth-child(2)')
+    const newLi = document.createElement('li')
+    newLi.appendChild(document.createTextNode('C++'))
+    secondLanguage.replaceWith(newLi)
+
+    // in this code use outerHTML to replace the first element with new element
+    const firstLanguage = document.querySelector('li:first-child')  
+    firstLanguage.outerHTML = '<li>PHP</li>'
+
+    //remove the last element
+    const lastLanguage = document.querySelector('li:last-child')
+    lastLanguage.remove()
+</script>
+</html>

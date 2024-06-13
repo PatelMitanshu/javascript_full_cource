@@ -1,0 +1,28 @@
+const user={
+    username:'Mitanshu',
+    Email:'mitanshu@gmail.com',
+    WelcomeMessage:function(){
+      console.log(`Welcome ${this.username} to the world of JavaScript`)
+    }
+}
+// console.log(user.WelcomeMessage())
+// Changing the username
+user.username='Mittu'
+// console.log(user.WelcomeMessage())
+
+// const addtwo = (a,b) => {
+//     return a+b
+// }
+
+// console.log(addtwo(2,3))
+
+// single line arrow function
+// const addtwo = (a,b) => a+b
+
+// console.log(addtwo(2,3))
+
+// passing object in single line arrow function
+
+const addtwo = (a,b) => ({username:"MITANASHU"})
+
+console.log(addtwo(12,34))

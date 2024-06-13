@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="title">
+    <h1 class="h1">DOM learning on chai aur code 
+       <h4 style="display: none;"></h4>is best code</h4></h1>
+       <ul>
+       <li>Hello1</li> 
+       <li>Hello2</li>
+       <li>Hello3</li>
+       </ul>
+    <script>
+        document.getElementById('title').setAttribute('class','title')
+        // when ever we use setAttribute it will replace the existing attribute
+        // if we want to add a new class to the existing class we can use the following code
+        document.getElementById('title').setAttribute('class',document.getElementById('title').getAttribute('class')+' title')
+
+        // use of javascript to add style to the element
+        document.getElementById('title').style.color = 'red'
+        document.getElementById('title').style.backgroundColor = 'black'
+
+        // use of javascript to chane the content of the element
+        // difference between innerHTML and textContent
+        // innerHTML will return the html content of the element
+        // textContent will return the text content of the element
+        // any text content is hide using display none then innerText will not  return this  content but textContent will return the content
+        
+        document.getElementById('title').innerText
+        document.getElementById('title').textContent
+
+        // inerHTML will return the html content and text of the element
+        document.getElementById('title').innerHTML
+        // querySelector will return the first element which matches the selector
+        document.querySelector('.title')
+
+        // we can also use the querySelector to change the style of the element
+        const turngreen = document.querySelector('.title')
+        turngreen.style.color = 'green'
+       // we querySelectorAll to select all the elements which matches the selector
+       // it will return the nodelist
+       // we can use access the element using index apply the style to the element
+        const temList = document.querySelectorAll('li')
+        temList[0].style.color = 'blue'
+        temList[1].style.color = 'red'
+        temList[2].style.color = 'green'
+
+        // we same change all the same element using querySelectorAll and forEach
+        const temList = document.querySelectorAll('li')
+        temList.forEach((element)=>{
+            element.style.color = 'blue'
+        }) 
+        // in getElementByClassName we can not directly access the element using index we can convert the Htmlcollection to array and then access the element using index and use foreach to apply the style to the element  
+        const tempclassname=document.getElementsByClassName('li')
+        const tempArray = Array.from(tempclassname)
+        tempArray[0].style.color = 'blue'
+
+    </script>   
+</body>
+</html>                     
