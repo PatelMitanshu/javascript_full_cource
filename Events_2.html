@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello javascript</h2>
+    <button>stop</button>
+</body>
+<script>
+   
+
+    const changeText = function(){
+        document.querySelector('h2').innerHTML = "Hello Mitanshu"
+    }
+
+
+    // setTimeout is used to change the text after a specific time
+    // in this function first parameter is function name and second parameter is time in milliseconds
+   
+    const changeMe=setTimeout(changeText,2000)
+
+     // this function pass in a variable and then we can use this variable in clearInterval function to stop the execution of setTimeout function
+     
+    document.querySelector('button').addEventListener('click',function(){
+        clearInterval(changeMe)
+    })
+
+</script>
+</html>
