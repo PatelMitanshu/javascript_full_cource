@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>Fetch the data from github api of Your name,your photo and your followers</h1>
+      <h2>Enter your github api url</h2>
+    <input type="text" id="urlInput">
+    <button onclick="updateRequestUrl()">Submit</button>
+
+    <script>
+        function updateRequestUrl() {
+            const input = document.getElementById("urlInput");
+            const newUrl = input.value;
+            // trim is used to remove the extra space from the url
+            const RequestUrl = newUrl.trim();
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', RequestUrl);
+
+            xhr.onreadystatechange = function() {
+                console.log(xhr.readyState);
+                if (xhr.readyState === 4) {
+                    const data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    document.querySelector('body').innerHTML = `
+                        <div class="card"></div>
+                        <img src="${data.avatar_url}" alt="Your Photo">
+                        <div class="card-info">
+                            <h2>Your Name: ${data.name}</h2>
+                            <p>Followers: <span>${data.followers}</span></p>
+                            <h2>Thank you to Hitesh Choudhary sir for teaching us </h2>
+                            <h2>youtube channel: chai or code</h2>
+                        </div>
+                    `;
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
