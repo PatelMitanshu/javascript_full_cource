@@ -22,14 +22,21 @@
         }
         return color;
       }
+      
+      let Color_Interval;
+
       document.querySelector('#start').addEventListener('click', function(){
-        Color_Interval = setInterval(function(){
+
+      if(!Color_Interval)
+      { 
+          Color_Interval =setInterval(function(){
           document.body.style.backgroundColor = rendomColor();
           document.querySelector('h4').textContent = rendomColor();
         }, 1000);
-
+      }
       document.querySelector('#stop').addEventListener('click', function(){
         clearInterval(Color_Interval);
+        Color_Interval = null;
       });
       })
     </script>
