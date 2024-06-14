@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Api Request</h1>
+</body>
+<script>
+    //  Api Request using XMLHttpRequest 
+  
+    
+      // first we have to  create a variable for RequestUrl store the url of the api in it
+
+    const RequestUrl ='https://api.github.com/users/mitanshu123'
+
+    // then we have to create a variable for xhr store the XMLHttpRequest in it
+    const xhr = new XMLHttpRequest();
+    // then we have to open the request using open method of xhr two parameter is passed in it first is the method of request and second is the url of the request
+    // two type of request is there GET and POST 
+    // post is used to send and get sensitive data to the server
+    // get is used to get the data from the server not to send the data to the server and not used to get the sensitive data becasue your data is visible in the url
+    xhr.open('GET',RequestUrl);
+
+    // onreadystatechange is a event listener which is used to check the state of the request and when the state is 4 then the request is completed and after we can get the data from the server
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(xhr.responseText);
+            console.log(data);
+            console.log(data.followers);
+        }
+    }
+    // then we have to send the request using send method of xhr without send method the request is not send to the server data is not get from the server
+    xhr.send();
+</script>
+</html>
