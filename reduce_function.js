@@ -46,3 +46,6 @@ const courses=[{
 const total = courses.reduce((acc,curr)=>{
     return acc+curr.price
 })
+
+
+//Thank you to Hitesh Choudhary sir for teaching us
