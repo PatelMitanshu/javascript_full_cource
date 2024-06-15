@@ -23,4 +23,4 @@ console.log(jsuser.greeting())
 console.log(jsuser.greetingtwo())
 
 
-
+//Thank you to Hitesh Choudhary sir for teaching us
