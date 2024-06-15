@@ -26,3 +26,6 @@ course={
 
 const {coueseInstructor: instructor}=course
 console.log(instructor)
+
+
+//Thank you to Hitesh Choudhary sir for teaching us
