@@ -36,3 +36,5 @@ const addTwo = function(num){
 }
 
 console.log(addTwo(2))
+
+//Thank you to Hitesh Choudhary sir for teaching us
