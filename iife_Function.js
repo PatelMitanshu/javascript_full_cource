@@ -12,3 +12,6 @@
 ((name) => 
     {console.log(`Hello ${name}`)}
 )("Mitanshu");
+
+
+//Thank you to Hitesh Choudhary sir for teaching us
