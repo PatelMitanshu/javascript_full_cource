@@ -12,3 +12,5 @@
 // const hundreds = 100000
 // console.log(hundreds.toLocaleString('en-In'))
 
+
+//Thank you to Hitesh Choudhary sir for teaching us
