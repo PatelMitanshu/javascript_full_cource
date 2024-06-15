@@ -7,3 +7,5 @@ const another_array=[1,2,3,[4,6],7,[6,7,[4,5]]]
 
 const real_another=another_array.flat(Infinity)
 console.log(real_another)
+
+//Thank you to Hitesh Choudhary sir for teaching us
