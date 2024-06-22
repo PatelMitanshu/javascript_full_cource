@@ -23,5 +23,7 @@ function CreateUser(username,email,password){
 const chai = new CreateUser('chai','Chai@google.com','123456');
 console.log(chai)
 
+// thank you to hitesh choudhary for this explanation.
+
 
 
