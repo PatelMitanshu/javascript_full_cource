@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">button clicked</button>
+</body>
+<script>
+    class react{
+        constructor(){
+            this.library='react'
+            this.server='nodejs'
+
+            document
+            .querySelector('#button')
+            .addEventListener('click',this.handleClick.bind(this))
+         //  addEventListener('click',this.handleClick)
+         // oboue line will not work because this.handleClick is not binded to the class 
+         // working of bind is to bind the function to the class means this.handleClick will be binded to the class means access to all the properties of the class
+        }
+        handleClick(){
+            console.log('button clicked')
+            console.log(this)
+            // this.server is undefined because not binded
+        }
+    }
+
+    const app=new react()
+    app
+</script>
+</html>
